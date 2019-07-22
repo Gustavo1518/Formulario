@@ -35,6 +35,18 @@
       "genero": 2,
       "vacunas": false,
       "id": 3
+    },
+    {
+      "nombre": "",
+      "raza": "schnauzer",
+      "img": "https://www.vitake.net/wp-content/uploads/2017/01/asfas-1.jpg",
+      "color": "pimienta",
+      "tamaño": 1,
+      "peso": 1,
+      "edad": 1,
+      "genero": 2,
+      "vacunas": false,
+      "id": 4
     }
   ],
   "tamaño": [

@@ -2,7 +2,7 @@
   <div class="form">
     <form>
       <div class="field">
-        <label>Nombreeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</label>
+        <label>Nombre</label>
         <div class="control">
           <input class="input" type="text" placeholder="Nombre Del Animal" v-model="nombre" />
         </div>
@@ -35,21 +35,8 @@
         <div class="control">
           <div class="select">
             <select v-model="edad">              
-              <option>Selecciona Edad</option>
-              <option>1 año</option>
-              <option>2 año</option>
-              <option>3 año</option>
-              <option>4 año</option>
-              <option>5 año</option>
-              <option>6 año</option>
-              <option>7 año</option>
-              <option>8 año</option>
-              <option>9 año</option>
-              <option>10 año</option>
-              <option>11 año</option>
-              <option>12 año</option>
-              <option>13 año</option>
-              <option>Mas..</option>
+               <option value="">Selecciona Edad</option>
+              <option v-for="cato in catEdad" :key="cato.id" :value="cato.id">{{cato.valor}}</option>
             </select>
           </div>
         </div>
@@ -59,17 +46,17 @@
         <div class="control">
           <div class="select">
             <select v-model="genero">
-              <option>Selecciona Genero</option>
-              <option>Macho</option>
-              <option>Hembra</option>
+              <option value="">Selecciona Genero</option>
+              <option v-for="catoO in catG" :key="catoO.id" :value="catoO.id">{{catoO.valor}}</option>
             </select>
           </div>
         </div>
       </div>
       <div class="field">
-        <label class="checkbox">
-          <input type="checkbox" />
-          Todas Las Vacunas
+        <label class="checkbox" for="checkbox">
+          <input type="checkbox" id="checkbox" v-model="vacunas"/>
+          {{ vacunas }}
+          Todas las vacunas
         </label>
       </div>
       <button type="button" class="button is-primary" @click="agregar()">Guardar</button>
@@ -104,7 +91,9 @@ export default {
       edad: "",
       genero: "",
       vacunas: null,
-      catPeso: null
+      catPeso: null,
+      catEdad: null,
+      catG: null
     };
   },
   updated(){
@@ -114,6 +103,12 @@ export default {
     this.getCatalogoPeso().then(response => {      
         this.catPeso = response.data;        
     });    
+    this.getCatalogoEdad().then(response => {     
+        this.catEdad = response.data;        
+    });
+    this.getCatalogoG().then(response => {     
+        this.catG= response.data;        
+    });
   },
   methods: {
     agregar() {
@@ -141,6 +136,12 @@ export default {
     },
     getCatalogoPeso() {
       return axios.get("http://localhost:3000/peso");
+    },
+     getCatalogoEdad() {
+      return axios.get(" http://localhost:3000/edad");
+    },
+     getCatalogoG() {
+      return axios.get(" http://localhost:3000/genero");
     }
   }
 };
