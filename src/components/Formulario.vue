@@ -2,7 +2,7 @@
   <div class="form">
     <form>
       <div class="field">
-        <label>Nombre</label>
+        <label>Nombreeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</label>
         <div class="control">
           <input class="input" type="text" placeholder="Nombre Del Animal" v-model="nombre" />
         </div>
