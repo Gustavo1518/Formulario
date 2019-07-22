@@ -2,7 +2,7 @@
    <div>
    Vista Report
    <!-- router-link nos permite no cargar la pagina -->
-<router-link  to="/"  v-on:click="agregar" >
+<router-link  to="/">
      <a class="button is-success">Agregar</a>
 </router-link>
 <!-- llamamos al componente report por medio de su etiqueta que contiene su mismo nombre -->
@@ -18,15 +18,6 @@ export default{
   name: 'Reportt',
   components: {
     Report
-  },
-  methods: {
-   agregar(){
-this.router.push({ path: '/'})
-this.router.push({ name: 'Ops', params: { mode:'add', mascotas:{nombre:'FDJAS'}}})
-//this.$router.push({path: '/Ops', params: {mode:'add', mascotas:{nombre: 'Perro'}}
-//})
   }
-  }
-
 }
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div class="Report">
+    <center>
     <table class="table">
       <tr>
         <th>Nombre</th>
@@ -26,22 +27,8 @@
      <a class="button is-info">Normal</a>
 </router-link>
       </tr>
-      <tr>
-        <td>Datos Faltantes</td>
-        <td>Datos Faltantes</td>
-        <td>Datos Faltantes</td>
-        <td>Datos Faltantes</td>
-        <td>Datos Faltantes</td>
-        <td>Datos Faltantes</td>
-        <td>Datos Faltantes</td>
-<router-link  to="/">
-    <a class="button is-danger">Eliminar</a>
-</router-link>
-<router-link  to="/">
-     <a class="button is-info">Normal</a>
-</router-link>
-      </tr>
     </table>
+    </center>
   </div>
 </template>
 
