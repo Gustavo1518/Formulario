@@ -37,7 +37,7 @@
       "id": 3
     },
     {
-      "nombre": "",
+      "nombre": "ñ",
       "raza": "schnauzer",
       "img": "https://www.vitake.net/wp-content/uploads/2017/01/asfas-1.jpg",
       "color": "pimienta",
@@ -47,6 +47,40 @@
       "genero": 2,
       "vacunas": false,
       "id": 4
+    },
+    {
+      "nombre": "",
+      "raza": "schnauzer",
+      "img": "https://www.vitake.net/wp-content/uploads/2017/01/asfas-1.jpg",
+      "color": "pimienta",
+      "tamaño": 1,
+      "peso": 1,
+      "edad": 1,
+      "genero": 2,
+      "vacunas": false,
+      "id": 5
+    },
+    {
+      "nombre": "",
+      "img": "",
+      "color": "",
+      "tamaño": "",
+      "peso": "",
+      "edad": "",
+      "genero": "",
+      "vacunas": false,
+      "id": 6
+    },
+    {
+      "nombre": "jojo",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKVSOTgoaw5W6-dLfPAVAwOas6iAT8RE5z4mTNKckCP-8sHo25",
+      "color": "blanco",
+      "tamaño": "",
+      "peso": 4,
+      "edad": 6,
+      "genero": 1,
+      "vacunas": false,
+      "id": 7
     }
   ],
   "tamaño": [

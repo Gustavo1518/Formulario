@@ -20,12 +20,12 @@
         <td>{{ mascota.edad }}</td>
         <td>{{ mascota.genero }}</td>
         <td>{{ mascota.vacunas }}</td>
-<router-link  to="/">
+<button>
       <a class="button is-danger">Eliminar</a>
-</router-link>
-<router-link  to="/">
-     <a class="button is-info">Normal</a>
-</router-link>
+</button>
+<button @click="todoMascotas(mascota)">
+     <a class="button is-info">Modificar</a>
+</button>
       </tr>
     </table>
     </center>
@@ -51,6 +51,10 @@ export default {
     getMascotas() {
       return axios.get("http://localhost:3000/mascotas");
     },
+    todoMascotas(mascotas) {
+     console.log(mascotas)
+     this.$router.push({name:'Ops', params: { mascotas }});
+    }
   }
 };
 </script>

@@ -82,8 +82,7 @@ export default {
   name: "Formulario",
   data() {
     return {
-      nombre: "",
-      raza: "",
+      nombre: (this.$route.params.mascotas.nombre != undefined)?this.$route.params.mascotas.nombre:"",
       img: "",
       color: "",
       tamaño: "",
@@ -93,11 +92,15 @@ export default {
       vacunas: null,
       catPeso: null,
       catEdad: null,
-      catG: null
+      catG: null,
+      accion: (this.$route.params.mascotas != undefined)?"modificar":"agregar",
     };
   },
   updated(){
+    console.log("updated Formulario");
     console.log(this);
+    console.log(this.$router);
+    console.log(this.$route.params);
   },
   beforeMount(){    
     this.getCatalogoPeso().then(response => {      
@@ -124,13 +127,12 @@ export default {
     save() {
       return axios.post("http://localhost:3000/mascotas", {
         nombre: this.nombre,
-        raza: "schnauzer",
-        img: "https://www.vitake.net/wp-content/uploads/2017/01/asfas-1.jpg",
-        color: "pimienta",
-        tamaño: 1,
-        peso: 1,
-        edad: 1,
-        genero: 2,
+        img: this.img,
+        color: this.color,
+        tamaño:this.tamaño,
+        peso: this.peso,
+        edad: this.edad,
+        genero: this.genero,
         vacunas: false
       });
     },
