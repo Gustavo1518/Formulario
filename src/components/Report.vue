@@ -24,7 +24,7 @@
       <a class="button is-danger">Eliminar</a>
 </button>
 <button @click="todoMascotas(mascota)">
-     <a class="button is-info">Modificar</a>
+     <a class="button is-link">Modificar</a>
 </button>
       </tr>
     </table>
