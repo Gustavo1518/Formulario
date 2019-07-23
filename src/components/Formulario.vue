@@ -60,6 +60,7 @@
         </label>
       </div>
       <button type="button" class="button is-primary" @click="agregar()">Guardar</button>
+      <button type="button" class="button is-orange" @click="modificar()">Modificar</button>
     </form>    
   </div>
 </template>

@@ -61,17 +61,6 @@
       "id": 5
     },
     {
-      "nombre": "",
-      "img": "",
-      "color": "",
-      "tamaño": "",
-      "peso": "",
-      "edad": "",
-      "genero": "",
-      "vacunas": false,
-      "id": 6
-    },
-    {
       "nombre": "jojo",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKVSOTgoaw5W6-dLfPAVAwOas6iAT8RE5z4mTNKckCP-8sHo25",
       "color": "blanco",
