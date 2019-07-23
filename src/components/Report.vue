@@ -10,22 +10,18 @@
         <th>Edad</th>
         <th>Genero</th>
         <th>Todas Las Vacunas</th>
-        <th>Opciones</th>
+        <center><th>Opciones</th></center>
       </tr>
-      <tr v-for=" mascota in  mascotas" :key="mascota.id">
-        <td>{{ mascota.nombre }}</td>
+      <tr v-for=" (mascota, index) in  mascotas" :key="mascota.id">
+        <td> {{ index }} {{ mascota.nombre }}</td>
         <td> <img :src="mascota.img" :alt="imgAlt" height="80" width="80"></td>
         <td>{{ mascota.color }}</td>
         <td>{{ mascota.peso }}</td>
         <td>{{ mascota.edad }}</td>
         <td>{{ mascota.genero }}</td>
         <td>{{ mascota.vacunas }}</td>
-<button>
-      <a class="button is-danger">Eliminar</a>
-</button>
-<button @click="todoMascotas(mascota)">
-     <a class="button is-link">Modificar</a>
-</button>
+<button class="button is-danger" @click="eliminar(index)">Eliminar</button>
+<button class="button is-link" @click="todoMascotas(mascota)">Modificar</button>
       </tr>
     </table>
     </center>
@@ -54,9 +50,9 @@ export default {
     todoMascotas(mascotas) {
      console.log(mascotas)
      this.$router.push({name:'Ops', params: { mascotas }});
+    },       
     }
   }
-};
 </script>
 <style>
 .table {

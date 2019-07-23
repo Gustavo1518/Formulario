@@ -61,7 +61,7 @@
       </div>
       <button type="button" class="button is-primary" @click="agregar()">Guardar</button>
       <button type="button" class="button is-success" @click="todoMascotas(mascota)">Modificar</button>
-      <button type="button" class="button is-warning" @click="cancelar()">cancelar</button>
+      <button type="button" class="button is-warning" to="/">cancelar</button>
     </form>    
   </div>
 </template>
@@ -86,8 +86,7 @@ export default {
     return {
       nombre: (this.$route.params.mascotas.nombre != undefined)?this.$route.params.mascotas.nombre:"",
       img: (this.$route.params.mascotas.img != undefined)?this.$route.params.mascotas.img:"",
-      color: (this.$route.params.mascotas.color != undefined)?this.$route.params.mascotas.color:"",
-      tamaño: "",
+      color: (this.$route.params.mascotas.color != undefined)?this.$route.params.mascotas.color:"",     
       peso:(this.$route.params.mascotas.peso != undefined)?this.$route.params.mascotas.peso:"",
       edad: (this.$route.params.mascotas.edad != undefined)?this.$route.params.mascotas.edad:"",
       genero: (this.$route.params.mascotas.genero != undefined)?this.$route.params.mascotas.genero:"",

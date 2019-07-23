@@ -1,6 +1,6 @@
 <template>
    <div>
-   Vista Report
+   MASCOTAS
    <!-- router-link nos permite no cargar la pagina -->
 <router-link  to="/">
      <a class="button is-success">Agregar</a>
