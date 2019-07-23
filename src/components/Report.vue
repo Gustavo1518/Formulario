@@ -3,7 +3,7 @@
     <center>
     <table class="table">
       <tr>
-        <th>Nombreeeeeeeeeeeeeeee</th>
+        <th>Nombre</th>
         <th>Imagen</th>
         <th>Color</th>
         <th>Peso</th>
