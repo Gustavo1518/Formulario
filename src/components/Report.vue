@@ -54,10 +54,9 @@ export default {
     todoMascotas(mascotas) {
       console.log(mascotas);
       this.$router.push({ name: "Ops", params: { mascotas } });
-    },
+    },    
     eliminar(id) {
-      axios.delete("http://localhost:3000/mascotas/" + id)
-      .then(response => {
+      axios.delete("http://localhost:3000/mascotas/" + id).then(response => {
         this.getMascotas().then(response => {
           this.mascotas = response.data;
         });
