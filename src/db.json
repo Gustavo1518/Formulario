@@ -1,26 +1,14 @@
 {
   "mascotas": [
     {
-      "id": 1,
-      "nombre": "niky",
-      "raza": "scotch terrier",
-      "img": "https://img2.freepng.es/20180506/kxw/kisspng-scottish-terrier-west-highland-white-terrier-borde-5aef4b1578cfa9.1576468915256317654949.jpg",
-      "color": "negro",
-      "tamaño": 2,
-      "peso": 2,
-      "edad": 1,
-      "genero": 2,
-      "vacunas": false
-    },
-    {
-      "nombre": "dfdfdf",
-      "img": "",
-      "color": "",
-      "peso": "",
-      "edad": "",
-      "genero": "",
-      "vacunas": false,
-      "id": 2
+      "nombre": "tayson",
+      "img": "http://www.perros.com/content/perros_com/imagenes/galerias/thumbs6/(1)tyson%202%20meses.jpg",
+      "color": "Colores",
+      "peso": "4",
+      "edad": "10",
+      "genero": "2",
+      "vacunas": true,
+      "id": 3
     }
   ],
   "tamaño": [

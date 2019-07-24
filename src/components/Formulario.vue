@@ -1,6 +1,7 @@
 <template>
   <div class="form">
-    <form>
+    <center><h1>{{ accion }}</h1></center>
+    <form>      
       <div class="field">
         <label>Nombre</label>
         <div class="control">
@@ -59,8 +60,8 @@
           Todas las vacunas
         </label>
       </div>
-      <button type="button" class="button is-primary" @click="agregar()">Guardar</button>
-      <button type="button" class="button is-success" @click="todoMascotas(mascota)">Modificar</button>
+      <button type="button" class="button is-primary" @click="agregar()" v-if="accion == 'agregar'">Guardar</button>
+      <button type="button" class="button is-success" @click="modificar()" v-if="accion == 'modificar'">Modificar</button>
       <button type="button" class="button is-warning" to="/">cancelar</button>
     </form>
     <br />
@@ -90,18 +91,18 @@ export default {
   name: "Formulario",
   data() {
     return {
-      nombre: "", //(this.$route.params.mascotas.nombre != undefined)?this.$route.params.mascotas.nombre:"",
-      img: "", //(this.$route.params.mascotas.img != undefined)?this.$route.params.mascotas.img:"",
-      color: "", //(this.$route.params.mascotas.color != undefined)?this.$route.params.mascotas.color:"",
-      peso: "", //(this.$route.params.mascotas.peso != undefined)?this.$route.params.mascotas.peso:"",
-      edad: "", //(this.$route.params.mascotas.edad != undefined)?this.$route.params.mascotas.edad:"",
-      genero: "", //(this.$route.params.mascotas.genero != undefined)?this.$route.params.mascotas.genero:"",
+      nombre: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.nombre:"",
+      img: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.img:"",
+      color: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.color:"",
+      peso: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.peso:"",
+      edad: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.edad:"",
+      genero: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.genero:"",
       vacunas: null,
       catPeso: null,
       catEdad: null,
       catG: null,
-      errors: ""
-      //accion: (this.$route.params.mascotas != undefined)?"modificar":"agregar",
+      errors: "",
+      accion: (this.$route.params.mascotas != undefined)?"modificar":"agregar",
     };
   },
   updated() {
