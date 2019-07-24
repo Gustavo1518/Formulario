@@ -25,7 +25,7 @@
           <td>{{ mascota.genero }}</td>
           <td>{{ mascota.vacunas }}</td>
           <button class="button is-danger" @click="eliminar(mascota.id)">Eliminar</button>
-          <button class="button is-link" @click="todoMascotas(mascota)">Modificar</button>
+          <button class="button is-link" @click="modificar(mascota)">Modificar</button>
         </tr>
       </table>
     </center>
@@ -51,7 +51,7 @@ export default {
     getMascotas() {
       return axios.get("http://localhost:3000/mascotas");
     },
-    todoMascotas(mascotas) {
+    modificar(mascotas) {
       console.log(mascotas);
       this.$router.push({ name: "Ops", params: { mascotas } });
     },    

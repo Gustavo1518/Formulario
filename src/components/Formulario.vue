@@ -1,7 +1,9 @@
 <template>
   <div class="form">
-    <center><h1>{{ accion }}</h1></center>
-    <form>      
+    <center>
+      <h1>{{ accion }}</h1>
+    </center>
+    <form>
       <div class="field">
         <label>Nombre</label>
         <div class="control">
@@ -60,14 +62,23 @@
           Todas las vacunas
         </label>
       </div>
-      <button type="button" class="button is-primary" @click="agregar()" v-if="accion == 'agregar'">Guardar</button>
-      <button type="button" class="button is-success" @click="modificar()" v-if="accion == 'modificar'">Modificar</button>
+      <button
+        type="button"
+        class="button is-primary"
+        @click="agregar()"
+        v-if="accion == 'agregar'"
+      >Guardar</button>
+      <button
+        type="button"
+        class="button is-success"
+        @click="modificar()"
+        v-if="accion == 'modificar'"
+      >Modificar</button>
       <button type="button" class="button is-warning" to="/">cancelar</button>
     </form>
     <br />
     <div v-if="errors!==''" class="notification is-danger">
       <button class="delete" @click="errors=''"></button>
-
       {{errors}}
     </div>
   </div>
@@ -91,18 +102,40 @@ export default {
   name: "Formulario",
   data() {
     return {
-      nombre: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.nombre:"",
-      img: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.img:"",
-      color: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.color:"",
-      peso: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.peso:"",
-      edad: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.edad:"",
-      genero: (this.$route.params.mascotas != undefined)?this.$route.params.mascotas.genero:"",
+      nombre:
+        this.$route.params.mascotas != undefined
+          ? this.$route.params.mascotas.nombre
+          : "",
+      img:
+        this.$route.params.mascotas != undefined
+          ? this.$route.params.mascotas.img
+          : "",
+      color:
+        this.$route.params.mascotas != undefined
+          ? this.$route.params.mascotas.color
+          : "",
+      peso:
+        this.$route.params.mascotas != undefined
+          ? this.$route.params.mascotas.peso
+          : "",
+      edad:
+        this.$route.params.mascotas != undefined
+          ? this.$route.params.mascotas.edad
+          : "",
+      genero:
+        this.$route.params.mascotas != undefined
+          ? this.$route.params.mascotas.genero
+          : "",
       vacunas: null,
       catPeso: null,
       catEdad: null,
       catG: null,
       errors: "",
-      accion: (this.$route.params.mascotas != undefined)?"modificar":"agregar",
+      id:
+        this.$route.params.mascotas != undefined
+          ? this.$route.params.mascotas.id
+          : null,
+      accion: this.$route.params.mascotas != undefined ? "modificar" : "agregar"
     };
   },
   updated() {
@@ -157,6 +190,23 @@ export default {
     },
     getCatalogoG() {
       return axios.get(" http://localhost:3000/genero");
+    },
+    modificar() {
+      axios.put("http://localhost:3000/mascotas/" + this.id, {
+        nombre: this.nombre,
+        img: this.img,
+        color: this.color,
+        tamaño: this.tamaño,
+        peso: this.peso,
+        edad: this.edad,
+        genero: this.genero,
+        vacunas: false
+      }).then(response => {
+        console.log(response);
+        this.$router.push("Reportt");
+      }).catch(err => {
+        console.log(err);
+      });
     }
   }
 };

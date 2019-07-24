@@ -7,7 +7,7 @@
       "peso": "4",
       "edad": "10",
       "genero": "2",
-      "vacunas": true,
+      "vacunas": false,
       "id": 3
     }
   ],
