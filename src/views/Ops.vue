@@ -1,20 +1,20 @@
 <template>
   <div>
-  <div class="notification is-primary">
- Operaciones
-</div>
-<router-link  to="/Reportt">
-     <a class="button is-primary">Ver Tabla</a>
-</router-link>
-    <Formulario/>
-</div>
+    <div class="notification is-primary">
+      <router-link to="/Reportt">
+        <a class="button is-danger">Ver Tabla</a>
+      </router-link>
+    </div>
+
+    <Formulario />
+  </div>
 </template>
 <script>
-import Formulario from '@/components/Formulario.vue'
-export default{
-  name: 'Ops',
+import Formulario from "@/components/Formulario.vue";
+export default {
+  name: "Ops",
   components: {
-   Formulario
+    Formulario
   }
-}
+};
 </script>

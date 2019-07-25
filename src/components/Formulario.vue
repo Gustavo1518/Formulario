@@ -67,6 +67,7 @@
         class="button is-primary"
         @click="agregar()"
         v-if="accion == 'agregar'"
+      @keyup.enter="agregar()"
       >Guardar</button>
       <button
         type="button"
@@ -157,8 +158,18 @@ export default {
   },
   methods: {
     agregar() {
-      if (this.nombre == "") {
-        this.errors = "favor de registrar un nombre";
+      if (this.nombre == "" ) {
+        this.errors = "favor de completar los campos";
+      } else if (this.img == "") {
+        this.errors = "favor de completar los campos";
+      } else if (this.color == "") {
+        this.errors = "favor de completar los campos";
+      } else if (this.peso == "") {
+        this.errors = "favor de completar los campos";
+      } else if (this.peso == "") {
+        this.errors = "favor de completar los campos";
+      } else if (this.edad == "") {
+        this.errors = "favor de completar los campos";
       } else {
         this.save()
           .then(response => {
@@ -192,21 +203,24 @@ export default {
       return axios.get(" http://localhost:3000/genero");
     },
     modificar() {
-      axios.put("http://localhost:3000/mascotas/" + this.id, {
-        nombre: this.nombre,
-        img: this.img,
-        color: this.color,
-        tamaño: this.tamaño,
-        peso: this.peso,
-        edad: this.edad,
-        genero: this.genero,
-        vacunas: false
-      }).then(response => {
-        console.log(response);
-        this.$router.push("Reportt");
-      }).catch(err => {
-        console.log(err);
-      });
+      axios
+        .put("http://localhost:3000/mascotas/" + this.id, {
+          nombre: this.nombre,
+          img: this.img,
+          color: this.color,
+          tamaño: this.tamaño,
+          peso: this.peso,
+          edad: this.edad,
+          genero: this.genero,
+          vacunas: false
+        })
+        .then(response => {
+          console.log(response);
+          this.$router.push("Reportt");
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };

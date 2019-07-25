@@ -9,6 +9,16 @@
       "genero": "2",
       "vacunas": false,
       "id": 3
+    },
+    {
+      "nombre": "sad",
+      "img": "https://www.infobae.com/new-resizer/kAjCyEfwdw0H57sLGDM5OOrTFUI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/04/06155038/perro-beso-1024x576.jpg",
+      "color": "dqsa",
+      "peso": 2,
+      "edad": 5,
+      "genero": 1,
+      "vacunas": false,
+      "id": 4
     }
   ],
   "tamaño": [
